@@ -18,12 +18,12 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBe(42);
 });
 
+
 test('pop removes and returns top element and leavs top element on top ', () => {
     stack.push(5);
     stack.push(15);
     stack.push(25);
     expect(stack.pop()).toBe(25); // returnerar top elementet
-    expect(stack.pop()).toBe(15); // kollar att nästa element är överst
-    expect(stack.pop()).toBe(15); // kollar nästa pop
+    expect(stack.pop()).toBe(15); // kollar så att nästa element är överst
     expect(stack.pop()).toBe(5); // kollar att sista pop är kvar
-});
+}); 
