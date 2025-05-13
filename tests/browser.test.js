@@ -40,7 +40,7 @@ test("push adds a new element to the stack", async () => {
     await push.click();
 
     let alert = driver.switchTo().alert();
-    await alert.sendKeys("Ronaldo är bäst"); // skickar denna sträng till top_of_stack som är FEL!
+    await alert.sendKeys("Messi är bäst"); // skickar denna sträng till top_of_stack som är FEL!
     await alert.accept(); // accepterar/skickar strängen 
 
     // hämtar texten som finns i elementet med id:t "top_of_stack" 
