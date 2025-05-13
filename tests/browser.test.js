@@ -34,3 +34,18 @@ describe('Clicking "Pusha till stacken"', () => {
         await alert.accept();
     });
 });
+
+test("push adds a new element to the stack", async () => {
+    let push = await driver.findElement(By.id('push')); // hämtar knappen med id:t push
+    await push.click();
+
+    let alert = driver.switchTo().alert();
+    await alert.sendKeys("Ronaldo är bäst"); // skickar denna sträng till top_of_stack som är FEL!
+    await alert.accept(); // accepterar/skickar strängen 
+
+    // hämtar texten som finns i elementet med id:t "top_of_stack" 
+    let top_of_stack = await driver.findElement(By.id('top_of_stack')).getText();
+
+    expect(top_of_stack).toEqual("Messi är bäst"); // top_of_stack förväntar sig denna sträng 
+
+});
